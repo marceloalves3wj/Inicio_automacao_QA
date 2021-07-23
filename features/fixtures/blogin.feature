@@ -8,7 +8,7 @@
             Dado que o usuario acessa a home pagee
             Quando acessa a pagina de signinn
         
-
+        
         @usuarioautorizado
         Cenario: Usuário deve ser autorizado
             Quando o usuario prencher campos de login e senha corretamente
