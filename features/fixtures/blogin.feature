@@ -14,7 +14,13 @@
             Quando o usuario prencher campos de login e senha corretamente
             Então deve ser redirecionado a pagina my account
             
-
+        @fluxoe2e
+        Cenario: Fluxo completo de compra (autenticação, busca de produto, produto no carrinho, finalizar compra, gerar pedido)
+            Dado que o usuario esteja logado no site
+            E deseje comprar camisetas  
+            Quando selecionar os produtos que deseja adicionando os ao carrinho
+            E prosseguir com o checkout
+            Entao sera redirecionado a pagina de finalizar a compra
         # Cenario: Senha errada
 
         #     Dado que o usuario acessa a pagina principal

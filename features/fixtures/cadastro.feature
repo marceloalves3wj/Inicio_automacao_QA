@@ -11,8 +11,21 @@
         @iniciocadastro
         Cenario: Inicio cadastro
             Dado que o usuario informe o email que deseja utilizar para criar a conta
-            Quando clica no botao Create an account
+            E clica no botao Create an account
             Entao sera redirecionado para a pagina de cadastro
+
+        @campoemailembranco
+         Cenario: Usuario tenta acessar formulario de cadastro sem colocar um email
+            Dado que o usuario deixa de informar um email na tela de autenticao
+            E clica no botao Create an account
+            Entao recebera uma mensagem de erro dizendo que o email e invalido
+
+        @emailinvalido
+        Cenario: Usuario digita email invalido na pagina  de autenticao
+            Dado que o usuario informe o email com formatacao errada
+            E clica no botao Create an account
+            Entao vera a mensagem de Invalid email address.
+
 
         @concluindocadastro
         Cenario: Concluindo cadastro
@@ -30,11 +43,7 @@
             Entao vera uma notificacao de erro com os campos obrigatorios que nao foram preenchidos
 
 
-        @emailinvalido
-        Cenario: Usuario digita email invalido na pagina  de autenticao
-            Dado que o usuario informe o email com formatacao errada
-            Quando clica no botao Create an account
-            Entao vera a mensagem de Invalid email address.
+        
 
         
 

@@ -7,15 +7,34 @@ Dado('que o usuario acessa a home page') do
   end
   
   Dado('que o usuario informe o email que deseja utilizar para criar a conta') do
-    find("#email_create").set "marcelorla@gmail.com"
+    find("#email_create").set Faker::Internet.email
   end
   
-  Quando('clica no botao Create an account') do 
+  E('clica no botao Create an account') do 
     find("#SubmitCreate").click
   end
   
   Entao('sera redirecionado para a pagina de cadastro') do
     expect(page).to have_text "Assign an address alias for future reference. *"
+    sleep 5
+  end
+
+  Dado('que o usuario deixa de informar um email na tela de autenticao') do
+    find("#SubmitCreate")
+  end
+
+  Entao('recebera uma mensagem de erro dizendo que o email e invalido') do
+    expect(page).to have_text "Invalid email address."
+    sleep 5
+  end
+
+  Dado('que o usuario informe o email com formatacao errada') do
+    find("#email_create").set "marcelorlgmail.com"
+    sleep 5
+  end
+
+  Entao('vera a mensagem de Invalid email address.') do
+    expect(page).to have_text "Invalid email address."
     sleep 5
   end
 
@@ -65,15 +84,7 @@ Dado('que o usuario acessa a home page') do
   
   Entao('vera uma notificacao de erro com os campos obrigatorios que nao foram preenchidos') do
     expect(page).to have_text "There are 3 errors" 
-    sleep 10
-  end
-
-  Dado('que o usuario informe o email com formatacao errada') do
-    find("#email_create").set "marcelorlgmail.com"
     sleep 5
   end
 
-  Entao('vera a mensagem de Invalid email address.') do
-    expect(page).to have_text "Invalid email address."
-    sleep 10
-  end
+  

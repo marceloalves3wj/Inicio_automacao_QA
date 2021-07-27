@@ -13,8 +13,7 @@ Quando('o usuario prencher campos de login e senha corretamente') do
 end
 
 Então('deve ser redirecionado a pagina my account') do
-#   expect(page).to have_text "Welcome to your account. Here you can manage all of your personal information and orders."
-#   sleep 10
   find(".logout")
-  sleep 10
+  sleep 5
 end
+
