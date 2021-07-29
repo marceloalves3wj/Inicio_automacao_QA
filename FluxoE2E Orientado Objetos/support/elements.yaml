@@ -1,0 +1,28 @@
+#elemento home
+botaoSignIn: ".login"
+#campo email
+campoEmail: "#email"
+#campo senha
+campoSenha: "#passwd"
+#botao login
+botaoLogin: "#SubmitLogin"
+#expect my account
+expect: ".logout"
+#homepage
+home: 'http://automationpractice.com/index.php'
+#
+
+
+
+#fluxoe2e
+#busca camisa (na pgn my account)
+botaoTshirts: 'a[href="http://automationpractice.com/index.php?id_category=5&controller=category"]'
+campoSearch: "#search_query_top"
+
+#pagina produto
+#camisetaFaded: "Faded Short Sleeve T-shirts"
+
+#pagina checkout
+botaoCheckout: "a[title='Proceed to checkout']"
+checkbox: '.checker'
+metodopagamento: ".bankwire"
